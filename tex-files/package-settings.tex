@@ -1,0 +1,180 @@
+\usepackage{times} % Times new roman font asked in the guideline
+%%%%%%%%%%%%%%% Maths symbols %%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+%\usepackage{siunitx}
+%%%%%%%%%%%%%%%%%%%% Figures, tables and captions %%%%%%%%
+\usepackage{graphicx}
+%\usepackage{lscape}
+\usepackage{caption} % Changes font of captions by putting [font=sf] before {caption} if required.
+%\usepackage{dpfloat} % Ability to place figure on even or odd page using \begin{leftfullpage}
+\usepackage{booktabs}
+\usepackage{longtable} %for list of acronyms
+\usepackage{threeparttable}
+\usepackage{subcaption}
+
+\usepackage{algorithmic}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{interval}
+\usepackage{adjustbox}
+%%%%%%%%%%%%%%%%%%%%%% Track review changes %%%%%%%%%%%%%%%
+%\usepackage{xcolor}
+%\newcommand{\RV}[1]{\textcolor{violet}{#1}}
+
+%%%%%%%%%%%%%%%%%% Numbering lines in verbatim %%%%%%%%%%%%
+%\usepackage{fancyvrb}
+%%%%%%%%%%%%%%%%%%%%%%%% Appendices %%%%%%%%%%%%%%%%%%%
+\usepackage{appendix}
+
+\DeclareCaptionFormat{custom}
+{%
+    \textbf{#1#2} #3
+}
+\captionsetup{format=custom}
+%%%%%%%%%%%%%%%%%%%%%%%%%% Navigation %%%%%%%%%%%%%%%%%%%
+% \usepackage[hidelinks,colorlinks,allcolors=blue]{hyperref} %soft-copy with color hyperlinks
+\usepackage[hidelinks]{hyperref} %hard-copy no color hyperlinks
+
+\renewcommand{\sectionautorefname}{Section}	%captitalize first s in Section while using autoref
+\renewcommand{\subsectionautorefname}{Subsection}
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\itemautorefname}{Item}
+\usepackage{bookmark}	%to use startatroot feature
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} %navigating titles along with numbers
+
+
+\usepackage[dashed=false, backend=biber, style=ieee, natbib=true, maxcitenames=2, mincitenames=1, defernumbers=true]{biblatex} %% use this for IEEE citation
+\usepackage{csquotes}
+\bibliography{references}
+\setcounter{biburlnumpenalty}{7000} %to break DOI having strings of numbers
+\usepackage[nospacearound]{extdash} %break already dashed word Otolaryngology in a reference
+
+%%%%%%%%%%%%%% Aesthetic, control of margins, headers, etc. %%%%%%%%%%%%%%%
+\usepackage{geometry}
+\geometry{
+left=30mm,
+top=30mm,
+right=25mm,
+bottom=25mm
+}
+\setlength{\headheight}{14.49998pt} % fancyhdr need space on top
+\usepackage{fancyhdr,layout}
+\usepackage{etoolbox}		%to use appto command
+%\oddsidemargin 1.6 cm
+%\evensidemargin 0.4 cm
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername}\ \thechapter.\ #1}{}}		%changing the chaptermark
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}} %not used
+\fancypagestyle{main}{%		%pagestyles for mainmatter
+\fancyhf{}
+% \fancyhead[LE,RO]{\bfseries\thepage}	%page number at HeaderCenter for both even and odd pages % if I make it for two-sided book-like printing
+\fancyhead[R]{\bfseries\thepage}	%page number at HeaderCenter for both even and 
+\renewcommand{\headrulewidth}{0pt}	%width of the header rule
+\renewcommand{\footrulewidth}{0pt}
+}
+%\addtolength{\headheight}{14.5pt}
+\setlength{\footskip}{0in}
+\renewcommand{\footruleskip}{0pt}
+\fancypagestyle{plain}{%		%redefining plain page style for first few pages
+\fancyhf{}
+% \fancyhead[LE,RO]{\bfseries\thepage} % if I make it for two-sided book-like printing
+\fancyhead[R]{\bfseries\thepage} % If I make it for single-sided printing
+\renewcommand{\headrulewidth}{0pt}
+}
+\appto\frontmatter{\pagestyle{plain}}
+\appto\mainmatter{\pagestyle{main}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Others %%%%%%%%%%%%%%%%%%%%%
+\usepackage{enumerate}
+\usepackage{array}	%to use arraybackslash in table
+\usepackage{calc}		%to add two length variable
+%\usepackage{anyfontsize}
+
+%%%%%%%%%%%%%%%%%%%%%% Control of chapter/section headings according to the guidelines %%%%%%%%%%%%%%%%%%%%%
+\usepackage[explicit]{titlesec}
+
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+
+\titleformat{\chapter}[display]{\normalfont\bfseries\filcenter}{\MakeUppercase\chaptertitlename\  \thechapter}{40pt}{{#1}}	%The space after the CHAPTER
+
+\titlespacing*{\chapter} {0pt}{-30pt}{40pt} % slightly changed to look better
+
+\titleformat{\section}{\normalfont\bfseries}{\thesection}{0.65em}{#1}
+%\titlespacing*{\section}{0pt}{24pt}{12pt} 
+\titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{1ex plus .2ex}	
+
+\titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{0.65em}{#1}
+%\titlespacing*{\subsection}{0pt}{20pt}{10pt}
+\titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{.5ex plus .2ex}
+
+\titleformat{\subsubsection}{\normalfont\bfseries}{\thesubsubsection}{0.65em}{#1}
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{.5ex plus .2ex}
+
+%standard spacings from titlesec doc
+% \titlespacing*{\chapter} {0pt}{50pt}{40pt}
+% \titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+% \titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+% \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
+
+%%%%%%%%%%%%%%%%%%%%%%% Line Spacing %%%%%%%%%%%%%%%%%%
+% spacing 1.5
+%\linespread{1.5} 
+%\renewcommand{\baselinestretch}{1.5}		%controlling linespacing using baselinestretch changing, similar to the linespread command. It changes the spacing for everything in the document, including footnotes and tables
+%\newcommand{\spacingR}[1]{\linespread{#1}\selectfont}		%different line spacing within the document if line spread is used
+\usepackage{setspace}
+%\captionsetup{font={stretch=1.5}}	%to address: setspace doesn't change the figure/table captions
+\setstretch{1.5}	%onehalfspacing of LaTeX doesn't match with MS Word's 1.5 spacing, so tuned this value. Probably MS Word's 1.5 spacing is equivalent to (slightly less than) double spacing in LaTeX
+%\onehalfspacing
+%%%%%%%%%%%%% control the style of toc, lof, lot %%%%%%%%%%%%%%%%
+\usepackage{tocloft} 
+%making toc centered
+\renewcommand{\cfttoctitlefont}{\hfill\large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill} 
+\addtocontents{toc}{~\hfill\textbf{Page}\par}	%to pring the word "Page" above the page numbers
+%making lot centered
+\renewcommand{\cftlottitlefont}{\hfill\large\bfseries\MakeUppercase}
+\renewcommand{\cftafterlottitle}{\hfill} 
+%making lof centered
+\renewcommand{\cftloftitlefont}{\hfill\large\bfseries\MakeUppercase}
+\renewcommand{\cftafterloftitle}{\hfill} 
+
+\renewcommand{\cftpnumalign}{c} %center align the page numbers
+\cftsetpnumwidth{1.9em}	%so that the alighment looks good with the title "Page"
+%write CHAPTER in front of chapter
+\renewcommand{\cftchapfont}{}		%removing boldface
+\renewcommand{\cftchappagefont}{} 	%removing boldface from page numbers
+\renewcommand{\cftchappresnum}{\bfseries CHAPTER } 
+\renewcommand{\cftchapaftersnum}{\quad}	%some space after chapter number
+\newlength{\mylen} % a "scratch" length
+\settowidth{\mylen}{\bfseries\cftchappresnum\cftchapaftersnum} % extra space
+\addtolength{\cftchapnumwidth}{\mylen} % add the extra space
+
+\cftsetindents{section}{\cftchapnumwidth}{\cftsecnumwidth} %pushing extra indent to put right below chapter title. Extra indents equal already calculated extra space (i.e., cftchapnumwidth) created by "CHAPTER " word. Section numwidth default value as cftsecnumwidth kept unaltered.
+\newlength{\mysecondlen}
+\setlength{\mysecondlen}{\cftchapnumwidth+\cftsecnumwidth} %subsection indent=chapter numwidth plus section numwidth
+\cftsetindents{subsection}{\mysecondlen}{\cftsubsecnumwidth} %indentation for subsection just like section
+
+% as per guideline, no dots linking to page number
+\renewcommand{\cftsecdotsep}{\cftnodots} %section
+\renewcommand{\cftsubsecdotsep}{\cftnodots} %subsection
+\renewcommand{\cftfigdotsep}{\cftnodots} %figure; looks weird for multi-line captions
+\renewcommand{\cfttabdotsep}{\cftnodots} %table; looks weird for multi-line captions
+
+%formatting frontmatter contents
+\renewcommand{\cftpartfont}{}		%removing boldface
+\renewcommand{\cftpartpagefont}{\normalfont} 	%removing boldface from page numbers and giving normalfont
+\setlength{\cftbeforepartskip}{1.5mm} %reducing vertical space in front matters of contents
+\cftsetindents{part}{3em}{\cftpartnumwidth} %extra indentation as per guideline
+
+%%%%%%%%%%%%%%%%%%%%%% Paragraph Indentation %%%%%%%%%%%%%%%
+\usepackage{parskip}	%to have a vartical space instead of indentation in paragraph... as per guideline. It has a slight clash with the tocloft package; suggested to declare after toclof

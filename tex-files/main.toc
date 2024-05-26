@@ -1,0 +1,19 @@
+\nobreakspace {}\hfill \textbf {Page}\par 
+\contentsline {part}{Title Page}{i}{section*.1}%
+\contentsline {part}{Abstract}{i}{section*.2}%
+\contentsline {part}{Contents}{ii}{section*.2}%
+\contentsline {chapter}{INTRODUCTION}{iii}{chapter*.3}%
+\contentsline {chapter}{METHODOLOGY}{iv}{chapter*.4}%
+\contentsline {section}{\numberline {0.1}A Bird's Eye View}{iv}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Statistical Analysis}{iv}{section.0.2}%
+\contentsline {section}{\numberline {0.3}Forecasting: Decision Maker Module}{v}{section.0.3}%
+\contentsline {subsection}{\numberline {0.3.1}Associated Equations}{v}{subsection.0.3.1}%
+\contentsline {chapter}{RESULTS}{vii}{chapter*.7}%
+\contentsline {section}{\numberline {0.4}Collection and Tabulation of Data}{vii}{section.0.4}%
+\contentsline {section}{\numberline {0.5}Statistical Analysis}{ix}{section.0.5}%
+\contentsline {section}{\numberline {0.6}Simulated data and Prediction for Voltage Unbalance}{xii}{section.0.6}%
+\contentsline {chapter}{DISCUSSIONS}{xiv}{chapter*.23}%
+\contentsline {chapter}{CONCLUSIONS}{xvi}{chapter*.24}%
+\contentsline {part}{REFERENCES}{xvii}{section*.25}%
+\contentsline {chapter}{\MakeUppercase []{Appendices}}{xvii}{appendix*.26}%
+\contentsline {part}{\MakeUppercase []{APPENDICES}}{xvii}{appendix*.26}%
